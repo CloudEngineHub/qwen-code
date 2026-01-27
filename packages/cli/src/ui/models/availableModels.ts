@@ -24,6 +24,13 @@ export const MAINLINE_CODER = DEFAULT_QWEN_MODEL;
 
 export const AVAILABLE_MODELS_QWEN: AvailableModel[] = [
   {
+    id: 'code-model-next',
+    label: 'code-model-next',
+    get description() {
+      return t('Preheating...');
+    },
+  },
+  {
     id: MAINLINE_CODER,
     label: MAINLINE_CODER,
     get description() {
