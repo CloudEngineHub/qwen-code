@@ -16,7 +16,7 @@ import { AuthType } from '@qwen-code/qwen-code-core';
 import type { LoadedSettings } from '../../config/settings.js';
 import { SettingScope } from '../../config/settings.js';
 import {
-  AVAILABLE_MODELS_QWEN,
+  getFilteredQwenModels,
   MAINLINE_CODER,
   MAINLINE_VLM,
 } from '../models/availableModels.js';
@@ -111,7 +111,7 @@ describe('<ModelDialog />', () => {
     expect(mockedSelect).toHaveBeenCalledTimes(1);
 
     const props = mockedSelect.mock.calls[0][0];
-    expect(props.items).toHaveLength(AVAILABLE_MODELS_QWEN.length);
+    expect(props.items).toHaveLength(getFilteredQwenModels(true).length);
     expect(props.items[0].value).toBe(
       `${AuthType.QWEN_OAUTH}::${MAINLINE_CODER}`,
     );
@@ -202,7 +202,7 @@ describe('<ModelDialog />', () => {
         return [{ id: 'gpt-4', label: 'GPT-4', authType: t }];
       }
       if (t === AuthType.QWEN_OAUTH) {
-        return AVAILABLE_MODELS_QWEN.map((m) => ({
+        return getFilteredQwenModels(true).map((m) => ({
           id: m.id,
           label: m.label,
           authType: AuthType.QWEN_OAUTH,

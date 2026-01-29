@@ -101,9 +101,16 @@ export const QWEN_OAUTH_ALLOWED_MODELS = [
  */
 export const QWEN_OAUTH_MODELS: ModelConfig[] = [
   {
+    id: 'qwen3-coder-next',
+    name: 'qwen3-coder-next',
+    description: 'The latest Qwen Coder model from Alibaba Cloud ModelStudio',
+    capabilities: { vision: false },
+  },
+  {
     id: 'coder-model',
     name: 'coder-model',
-    description: 'The latest Qwen Coder model from Alibaba Cloud ModelStudio',
+    description:
+      'The stable qwer3-coder-plus model from Alibaba Cloud ModelStudio',
     capabilities: { vision: false },
   },
   {
