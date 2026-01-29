@@ -86,7 +86,7 @@ export const AUTH_ENV_MAPPINGS = {
 } as const satisfies Record<AuthType, AuthEnvMapping>;
 
 export const DEFAULT_MODELS = {
-  openai: 'qwen3-coder-plus',
+  openai: 'qwen3-coder-next',
   'qwen-oauth': DEFAULT_QWEN_MODEL,
 } as Partial<Record<AuthType, string>>;
 
